@@ -1,0 +1,10 @@
+{
+  "xui_server": [
+    "https://aa.demo.com:20304/[自定义的订阅地址]/",
+    "https://bb.demo.com:20304/[自定义的订阅地址]/"
+  ],
+  "ssl": {
+    "key": "/root/cert/ak.demo.com/privkey.pem",
+    "cert": "/root/cert/ak.demo.com/fullchain.pem"
+  }
+}
