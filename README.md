@@ -16,7 +16,7 @@ https://aa.demo.com:20304/[自定义的订阅地址]/
 https://aa.demo.com:20304/[自定义的订阅地址]/[用户Subscription]
 
 之后你便可以使用
-http://ip:30303/xuijson?token=[用户Subscription]
+http://demo.com:30303/xuijson?token=[用户Subscription]
 
 ```json
 {
@@ -35,7 +35,7 @@ http://ip:30303/xuijson?token=[用户Subscription]
 
 如果配置了ssl证书就是
 
-https://ip:30303/xuijson?token=[用户Subscription]
+https://demo.com:30303/xuijson?token=[用户Subscription]
 
 即可获取多个面板的订阅组合信息
 
@@ -51,6 +51,27 @@ chmod +x xui-json
 ./xui-json
 #后台执行
 nohup ./xui-json >/dev/null 2>& 1&
+```
+
+
+
+# 原理
+
+当你开启xui的订阅设置时点开协议节点二维码时会有一个订阅地址复制
+
+```
+这时你有两个服务器如下地址其中Subscription 就是你的订阅Subscription 这里aa和bb是你自己区分xui服务器的订阅地址，当然你也可以一样这里仅仅是为了区分
+https://aa.demo.com:8080/aa/Subscription 
+https://bb.demo.com:8080/bb/Subscription 
+这个项目会将配置在config.json文件中的配置地址通过你的
+http://demo.com:30303/xuijson?token=Subscription 
+或者你配置了证书就是
+https://demo.com:30303/xuijson?token=Subscription 
+接口请求将这些地址整合一起返回给你
+切记订阅config.json配置是不要Subscription 的这个是你获取信息的关键
+https://aa.demo.com:8080/aa/
+https://bb.demo.com:8080/bb/
+config.json应该配置这俩货
 ```
 
 
