@@ -43,8 +43,9 @@ func xuiHttp(w http.ResponseWriter, r *http.Request) {
 		//发起http请求
 		resp, err := http.Get(xuiServer + token)
 		if err != nil {
-			http.Error(w, "请求失败", http.StatusInternalServerError)
-			return
+			//http.Error(w, "请求失败", http.StatusInternalServerError)
+			//return
+			continue
 		}
 		defer resp.Body.Close()
 		//读取响应
